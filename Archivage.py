@@ -112,36 +112,47 @@ debug = 0
 pata = 0
 space(100)
 
-def fermer():
-    """Ferme imediatement le programe en "douceur" == divison par 0 """
-    fen.destroy()
-    a = 1 / 0
-
 class title():
     """Fait aparaitre la fenetre du titre"""
     def __init__(self):
         self.fen = Tk()
-        self.titre = Label(fen, text = "Archivage")
-        self.question = Label(fen, text = "Que voulez vous faire ?")
-        self.but_archivage = Button(fen, text = "Archiver", height = 1, width = 15)
-        self.but_restaurer = Button(fen, text = "Restaurer archive", height = 1, width = 15)
-        self.but_option = Button(fen, text = "Option", height = 1, width = 15)
-        self.but_quiter = Button(fen, text = "Quitter", height = 1, width = 15, command= fermer)
+        self.fen.geometry("75x200")
+        self.fen.title("Archivage")
+        self.end = False
+        self.executer = ""
+
+        #creation des widget
+        self.titre = Label(self.fen, text = "Archivage")
+        self.question = Label(self.fen, text = "Que voulez vous faire ?")
+        self.but_archivage = Button(self.fen, text = "Archiver", command = lambda: self.notlambda("Archiver"), height = 1, width = 15)
+        self.but_restaurer = Button(self.fen, text = "Restaurer archive", command = lambda: self.notlambda("Restaurer archive"), height = 1, width = 15)
+        self.but_option = Button(self.fen, text = "Option", command = lambda: self.notlambda("Option"), height = 1, width = 15)
+        self.but_quiter = Button(self.fen, text = "Quitter", height = 1, width = 15, command = self.quitter)
 
         #on place les widget !
-        titre.pack()
-        question.pack()
-        but_archivage.pack()
-        but_restaurer.pack()
-        but_option.pack()
-        but_quiter.pack()
+        self.titre.pack()
+        self.question.pack()
+        self.but_archivage.pack()
+        self.but_restaurer.pack()
+        self.but_option.pack()
+        self.but_quiter.pack()
+        while self.end == False:
+            self.fen.update_idletasks()
+            self.fen.update()
 
-    #et on met sa dans le loop:
-    while 1:
-        fen.update_idletasks()
-        fen.update()
+    def quitter(self):
+        """Ferme imediatement le programe en "douceur" == divison par 0 """
+        self.end = True
+        self.fen.destroy()
+        a = 1 / 0
 
-title()
+    def notlambda(self, a):
+        self.executer = a
+        self.end = True
+
+a = title()
+print(a.executer)
+
 #startup end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while 1:
     #menu
