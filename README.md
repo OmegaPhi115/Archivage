@@ -1,5 +1,5 @@
 # Archivage
-Petit programe en Python 3 qui permet archiver les fichier et dossier non modifier a partir d'une date ou d'une durée.
+Petit programe en Python 3.0 qui permet archiver les fichier et dossier non modifier a partir d'une date ou d'une durée.
 
 Atention ! Ce programe est en beta ! Il peut archiver des fichier systeme !
 
