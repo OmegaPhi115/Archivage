@@ -1,5 +1,9 @@
 ##startup!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ##inport??????????????????????????????????????????????????????????????????????????????
+#import sans problemes
+import os, time, datetime, shutil, calendar, sys
+import winsound
+#import avec problemes
 import platform
 while 1:
     try:
@@ -18,8 +22,7 @@ except:
           nodateutil = 1
           print("Dateutil not found")
 
-import os, time, datetime, shutil, calendar, sys
-import winsound
+
 
 bootos = str(platform.release())
 if bootos == "10":
@@ -32,7 +35,7 @@ elif bootos == "7":
 	print("OS: Windows 7")
 elif int(bootos) < 7:
 	print("Panic!")
-    
+
 
 with open("/Program Files (x86)/Python Programs/Data/Common/shellheight - on.txt", mode = "r") as fichier:
           shellheight = str(fichier.read())
@@ -60,7 +63,7 @@ if windows_release_integer == 10:
 else:
 	consolewide = 50
 def progress(count, total, bar_len, status=''):
-    if not "idlelib" in sys.modules: 
+    if not "idlelib" in sys.modules:
               filled_len = int(round(bar_len * count / float(total)))
 
               percents = round(100.0 * count / float(total), 1)
@@ -87,13 +90,13 @@ def toasteur (toaston, titre, description, ico, dure = 10):
                              duration = dure)
 
 def newdirectory (newdoss):
-          if not os.path.exists(newdoss):   
+          if not os.path.exists(newdoss):
                     try:
                                os.makedirs(newdoss)
                     except OSError :
                               pass
 
-                              
+
 tempa = time.localtime()
 ny = int(time.strftime("%y", tempa))+ 2000
 nm = int(time.strftime("%m", tempa))
@@ -104,7 +107,7 @@ ns = int(time.strftime("%S", tempa))
 
 debug = 0
 pata = 0
-space(100)      
+space(100)
 
 #startup end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while 1:
@@ -130,7 +133,7 @@ while 1:
                       print("Debug on")
             elif debug == "on":
                       debug = 0
-                      
+
     elif tempa == 1:
             #Archivage
             noperm = 0
@@ -229,14 +232,14 @@ while 1:
 
                     #os walk
 
-                    if not "idlelib" in sys.modules: 
+                    if not "idlelib" in sys.modules:
                             fil = 0
                             for root, directories, filenames in os.walk(path):
                                     for file in filenames:
                                             fil = fil + 1
                     else:
                             fil = 0
-                            
+
                     for root, directories, filenames in os.walk(path):
                        for filename in filenames:
                             filecountercheck = filecountercheck + 1
@@ -250,7 +253,7 @@ while 1:
                             datefile = os.path.getmtime(os.path.join(root,filename))
 
                             #deplacer ?
-                            
+
                             if datefile <= datelim :
                                                ## print("Archiver", filename)
 
@@ -317,7 +320,7 @@ while 1:
                     winsound.PlaySound("F:\\Program Files (x86)\\Python Programs\\Data\\Archivage\\Windows Proximity Notification.wav", winsound.SND_FILENAME)
                     time.sleep(5)
 	##end archivage!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	
+
     elif tempa == 2:
             ##restaur!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             print("loading archives...")
@@ -363,13 +366,13 @@ while 1:
                                                         fil = fil + 1
                                 transfernum = 0
                                 permeror = False
-                                
+
                                 for root, directories, filenames in os.walk(archivenum):
-                                          
+
                                           for dire in directories:
                                                     if not os.path.exists(str(disque) + str(root.replace(str(archivenum), '') + "\\" + str(dire) + "\\")):
                                                               newdirectory(str(disque) + str(root.replace(str(archivenum), '') + "\\" + str(dire) + "\\"))
-                                                              
+
                                           for filename in filenames:
                                                     transfernum = transfernum + 1
                                                     if not filename == "info.txt":
@@ -381,7 +384,7 @@ while 1:
                                                               except PermissionError:
                                                                         permeror = True
 
-                                
+
                                 space(2)
                                 print("Done !")
                                 winsound.PlaySound("F:\\Program Files (x86)\\Python Programs\\Data\\Archivage\\Windows Proximity Notification.wav", winsound.SND_FILENAME)
