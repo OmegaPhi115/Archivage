@@ -1,7 +1,8 @@
 # Archivage
 Petit programe en Python 3.0 qui permet archiver les fichier et dossier non modifier a partir d'une date ou d'une durée.
 
-Atention ! Ce programe est en beta ! Il peut archiver des fichier systeme !
+Atention ! Ce programe est en beta !
+Il peut aussi archiver des fichier systeme !
 
 Systeme requis:
   - Windows 8 ou + (Windows 7 n'est pas tester mais devrait fonctioner)
