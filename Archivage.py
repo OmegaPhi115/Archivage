@@ -97,19 +97,50 @@ def newdirectory (newdoss):
                     except OSError :
                               pass
 
-
-tempa = time.localtime()
-ny = int(time.strftime("%y", tempa))+ 2000
-nm = int(time.strftime("%m", tempa))
-nd = int(time.strftime("%d", tempa))
-nh = int(time.strftime("%H", tempa))
-nmi = int(time.strftime("%M", tempa))
-ns = int(time.strftime("%S", tempa))
+try:
+    tempa = time.localtime()
+    ny = int(time.strftime("%y", tempa))+ 2000
+    nm = int(time.strftime("%m", tempa))
+    nd = int(time.strftime("%d", tempa))
+    nh = int(time.strftime("%H", tempa))
+    nmi = int(time.strftime("%M", tempa))
+    ns = int(time.strftime("%S", tempa))
+except:
+    pass
 
 debug = 0
 pata = 0
 space(100)
 
+def fermer():
+    """Ferme imediatement le programe en "douceur" == divison par 0 """
+    a = 1 / 0
+
+def title():
+    """Fait aparaitre la fenetre du titre"""
+    #initialisation de la fenetre
+    fen = Tk()
+    titre = Label(fen, text = "Archivage")
+    question = Label(fen, text = "Que voulez vous faire ?")
+    but_archivage = Button(fen, text = "Archiver")
+    but_restaurer = Button(fen, text = "Restaurer archive")
+    but_option = Button(fen, text = "Option")
+    but_quiter = Button(fen, text = "Quitter", command= fermer)
+
+    #on place les widget !
+    titre.pack()
+    question.pack()
+    but_archivage.pack()
+    but_restaurer.pack()
+    but_option.pack()
+    but_quiter.pack()
+
+    #et on met sa dans le loop:
+    while 1:
+        fen.update_idletasks()
+        fen.update()
+
+title()
 #startup end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while 1:
     #menu
