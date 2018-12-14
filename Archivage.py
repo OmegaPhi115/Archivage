@@ -114,26 +114,27 @@ space(100)
 
 def fermer():
     """Ferme imediatement le programe en "douceur" == divison par 0 """
+    fen.destroy()
     a = 1 / 0
 
-def title():
+class title():
     """Fait aparaitre la fenetre du titre"""
-    #initialisation de la fenetre
-    fen = Tk()
-    titre = Label(fen, text = "Archivage")
-    question = Label(fen, text = "Que voulez vous faire ?")
-    but_archivage = Button(fen, text = "Archiver")
-    but_restaurer = Button(fen, text = "Restaurer archive")
-    but_option = Button(fen, text = "Option")
-    but_quiter = Button(fen, text = "Quitter", command= fermer)
+    def __init__(self):
+        self.fen = Tk()
+        self.titre = Label(fen, text = "Archivage")
+        self.question = Label(fen, text = "Que voulez vous faire ?")
+        self.but_archivage = Button(fen, text = "Archiver", height = 1, width = 15)
+        self.but_restaurer = Button(fen, text = "Restaurer archive", height = 1, width = 15)
+        self.but_option = Button(fen, text = "Option", height = 1, width = 15)
+        self.but_quiter = Button(fen, text = "Quitter", height = 1, width = 15, command= fermer)
 
-    #on place les widget !
-    titre.pack()
-    question.pack()
-    but_archivage.pack()
-    but_restaurer.pack()
-    but_option.pack()
-    but_quiter.pack()
+        #on place les widget !
+        titre.pack()
+        question.pack()
+        but_archivage.pack()
+        but_restaurer.pack()
+        but_option.pack()
+        but_quiter.pack()
 
     #et on met sa dans le loop:
     while 1:
