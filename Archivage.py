@@ -110,8 +110,8 @@ except:
 
 debug = 0
 pata = 0
-space(100)
 
+######################################################################################################################################################################################
 class title():
     """Fait aparaitre la fenetre du titre"""
     def __init__(self):
@@ -149,9 +149,22 @@ class title():
     def notlambda(self, a):
         self.executer = a
         self.end = True
+######################################################################################################################################################################################
+class option():
+    def __init__(self):
+        self.fen = Tk()
+        self.fen.geometry("75x200")
+        self.fen.title("Options")
+        self.end = False
+
+        #changearchive
+######################################################################################################################################################################################
 
 a = title()
-print(a.executer)
+if a.executer == "Archiver":
+    pass
+elif a.executer == "Option":
+    pass
 
 #startup end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while 1:
@@ -441,7 +454,6 @@ while 1:
             while 1:
                       print("")
                       print("1) Changer le dossier d'archive")
-                      print("2) Affichage")
                       print("0) Retour ")
                       print("")
 
@@ -470,18 +482,6 @@ while 1:
                                                     with open("\\Program Files (x86)\\Python Programs\\Data\\Archivage\\archiveroot.txt", mode = "w") as fichier:
                                                               fichier.write("none")
                                                               break
-                      elif tempa == "2":
-                                print("1) Complet")
-                                print("2) Partiel")
-                                print("0) Retour")
-                                print("")
-                                tempa = str(input(""))
-                                if tempa == "1":
-                                          showmod = "all"
-                                elif tempa == "2":
-                                          showmod = "prog"
-                                elif tempa == "0":
-                                          break
                       elif tempa == "0":
                                 break
 
