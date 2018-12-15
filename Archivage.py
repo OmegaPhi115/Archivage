@@ -151,20 +151,32 @@ class title():
         self.end = True
 ######################################################################################################################################################################################
 class option():
+    """fenetre des options"""
+    print("tesssssst")
     def __init__(self):
+        print("test !")
         self.fen = Tk()
-        self.fen.geometry("75x200")
+        self.fen.geometry("150x200")
         self.fen.title("Options")
         self.end = False
 
-        #changearchive
+
+        self.changearchive = Entry(self.fen, width = 15)
+        self.changearchive.pack()
+        while self.end == False:
+            self.fen.update_idletasks()
+            self.fen.update()
+        self.fen.destroy()
 ######################################################################################################################################################################################
 
 a = title()
 if a.executer == "Archiver":
     pass
 elif a.executer == "Option":
-    pass
+    print("test ?")
+    opt = option()
+    eeeeee = opt.end
+    print(eeeeee)
 
 #startup end!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while 1:
