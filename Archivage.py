@@ -141,7 +141,7 @@ class title():
             self.fen.update()
 
     def quitter(self):
-        """Ferme imediatement le programe en "douceur" == divison par 0 """
+        """Ferme imediatement le programe en "douceur" => divison par 0 """
         self.end = True
         self.fen.destroy()
         a = 1 / 0
