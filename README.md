@@ -1,5 +1,6 @@
 # Smart Archivage
-Petit programe en Python 3.0 qui permet archiver les fichier et dossier non modifier a partir d'une date ou d'une durée. Il consiste seulement de la console python
+Petit programe en Python 3.0+ qui permet d'archiver les fichiers et dossiers non modifier a partir d'une date ou d'une durée. 
+Il consiste seulement de la console python
 
 Atention ! Ce programe est en beta !
 Il peut aussi archiver des fichier systeme !
