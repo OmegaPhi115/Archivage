@@ -30,15 +30,7 @@ else:
     consolewide = 50
 
 
-def progress(count, total, bar_len, status=''):
-    if not "idlelib" in sys.modules:
-        filled_len = int(round(bar_len * count / float(total)))
 
-        percents = round(100.0 * count / float(total), 1)
-        bar = '=' * filled_len + '-' * (bar_len - filled_len)
-
-        sys.stdout.write('[%s] %s%s ...%s\r' % (bar, percents, '%', status))
-        sys.stdout.flush()
 
 def toasteur(toaston, titre, description, ico, dure=10):
     if toaston == 0:
@@ -49,12 +41,7 @@ def toasteur(toaston, titre, description, ico, dure=10):
                            duration=dure)
 
 
-def newdirectory(newdoss):
-    if not os.path.exists(newdoss):
-        try:
-            os.makedirs(newdoss)
-        except OSError:
-            pass
+
 
 
 #tempa = time.localtime()
